@@ -12,6 +12,23 @@ public class TemperatureAnalyzer {
             temperatures[i] = scanner.nextDouble();
         }
 
+        double sum = 0;
+        for (double temp : temperatures) {
+            sum += temp;
+        }
+        double average = sum / numTemps;
+
+        int tempsAboveAverage = 0;
+        for (double temp : temperatures) {
+            if (temp > average) {
+                tempsAboveAverage++;
+            }
+        }
+
+        System.out.println("Average temperature: " + average);
+        System.out.println("Number of temperatures above average: " + tempsAboveAverage);
+
+
         scanner.close();
 
 
